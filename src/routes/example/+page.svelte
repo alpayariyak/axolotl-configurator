@@ -1,10 +1,16 @@
 <script lang="ts">
-    import { Accordion } from '@skeletonlabs/skeleton';
+    import {Accordion, Modal} from '@skeletonlabs/skeleton';
     import {config} from './config'
     import {example_validation} from './validation'
     import yaml from 'js-yaml'
 	import ExampleComponent from './ExampleComponent.svelte';
 	import YamlViewer from '$lib/components/YamlViewer.svelte';
+    import Credentials from "./Credentials.svelte";
+    import Model from "../axolotl/Model.svelte";
+    import Model_args from "./Model_Args.svelte";
+    import FineTune_Method from "./FineTune_Method.svelte";
+    import Model_Args from "./Model_Args.svelte";
+    import FineTune_Hyperparameters from "./FineTune_Hyperparameters.svelte";
     $: $config = example_validation($config) 
 
     function removeFields(obj: any) {
@@ -39,7 +45,11 @@
 <form on:submit|preventDefault={handleSubmit} class="space-y-10 max-w-3xl mx-auto">
     <div class="flex space-x-4">
         <Accordion class="card p-4">
-            <ExampleComponent/>
+            <Model_Args/>
+            <FineTune_Method/>
+            <FineTune_Hyperparameters/>
+            <Credentials/>
+<!--            <ExampleComponent/>-->
             <YamlViewer {config}/>
         </Accordion>
     </div>

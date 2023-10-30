@@ -27,7 +27,7 @@
 <AccordionItem>
     <svelte:fragment slot="summary">
         <div class="text-xl font-bold">
-            All Settings
+            Full Configuration
         </div>
     </svelte:fragment>
     <svelte:fragment slot="content">

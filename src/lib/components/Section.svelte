@@ -6,13 +6,20 @@
     export let name: string
     export let open = false
     export let description = ''
+    export let required = false
 </script>
+
+<style>
+    .required-asterisk {
+        color: red;
+    }
+</style>
 
 <AccordionItem {open}>
     <!--Sets the title-->
     <svelte:fragment slot="summary">
         <div class="text-xl font-bold">
-            {name}
+            {name}{required ? ' ' : ''}<span class={required ? 'required-asterisk' : ''}>{required ? '*' : ''}</span>  <!-- Update this line to conditionally render the asterisk -->
         </div>
         <div class="opacity-70 text-sm">
             {description}

@@ -17,7 +17,7 @@
                     </svg>
                 </span>
             </button>
-            <strong class="text-xl">OpenOrca ML UI</strong>
+            <strong class="text-xl">RunPod Fine-Tuning</strong>
         </div>
     </svelte:fragment>
 	<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
